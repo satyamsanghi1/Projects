@@ -1,0 +1,11 @@
+$(document).ready(
+function(){
+	$.getJSON("GetAllBranchJSON",{ajax:true},function(data)
+		{
+			$('#department').append($('<option>').val('-Select-').text('-Select-'));
+			$.each(data,function(i,item)
+			{
+				$('#department').append($('<option>').val(item.BRANCHID).text(item.BRANCHNAME));
+			});
+		});
+});

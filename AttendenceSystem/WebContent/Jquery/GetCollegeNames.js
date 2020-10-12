@@ -1,0 +1,11 @@
+$(document).ready(
+function(){
+	$.getJSON("GetAllCollegeJSON",{ajax:true},function(data)
+		{
+			$('#collegeid').append($('<option>').val('-Select-').text('-Select-'));
+			$.each(data,function(i,item)
+			{
+				$('#collegeid').append($('<option>').val(item.COLLEGEID).text(item.NAME));
+			});
+		});
+});

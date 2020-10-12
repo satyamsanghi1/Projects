@@ -1,0 +1,11 @@
+$(document).ready(
+function(){
+	$.getJSON("GetAllSectionJSON",{ajax:true},function(data)
+		{
+			$('#section').append($('<option>').val('-Select-').text('-Select-'));
+			$.each(data,function(i,item)
+			{
+				$('#section').append($('<option>').val(item.SECTIONID).text(item.SECTIONNAME));
+			});
+		});
+});

@@ -1,0 +1,11 @@
+$(document).ready(
+function(){
+	$.getJSON("GetAllBatchJSON",{ajax:true},function(data)
+		{
+			$('#batch').append($('<option>').val('-Select-').text('-Select-'));
+			$.each(data,function(i,item)
+			{
+				$('#batch').append($('<option>').val(item.BATCHID).text(item.BATCHNAME));
+			});
+		});
+});

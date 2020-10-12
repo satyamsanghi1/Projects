@@ -1,0 +1,11 @@
+$(document).ready(
+function(){
+	$.getJSON("GetAllCountryJSON",{ajax:true},function(data)
+		{
+			$('#country').append($('<option>').val('-Select-').text('-Select-'));
+			$.each(data,function(i,item)
+			{
+				$('#country').append($('<option>').val(item.COUNTRYID).text(item.COUNTRYNAME));
+			});
+		});
+});
